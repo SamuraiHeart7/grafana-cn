@@ -99,7 +99,7 @@ export class DashNavCtrl {
           $location.url(dashboardUrl);
         }
 
-        $scope.appEvent('alert-success', ['Dashboard saved', 'Saved as ' + clone.title]);
+        $scope.appEvent('alert-success', ['仪表盘保存成功', '已存为 ' + clone.title]);
       }, $scope.handleSaveDashError);
     };
 
@@ -109,9 +109,9 @@ export class DashNavCtrl {
 
         $scope.appEvent('confirm-modal', {
           title: 'Conflict',
-          text: 'Someone else has updated this dashboard.',
-          text2: 'Would you still like to save this dashboard?',
-          yesText: "Save & Overwrite",
+          text: '其他人已经更新了此仪表盘',
+          text2: '仍然要保存你的更改?',
+          yesText: "保存并覆盖",
           icon: "fa-warning",
           onConfirm: function() {
             $scope.saveDashboard({overwrite: true});
@@ -124,9 +124,9 @@ export class DashNavCtrl {
 
         $scope.appEvent('confirm-modal', {
           title: 'Conflict',
-          text: 'Dashboard with the same name exists.',
-          text2: 'Would you still like to save this dashboard?',
-          yesText: "Save & Overwrite",
+          text: '已存在同名的仪表盘',
+          text2: '仍然要保存此仪表盘?',
+          yesText: "保存并覆盖",
           icon: "fa-warning",
           onConfirm: function() {
             $scope.saveDashboard({overwrite: true});
@@ -137,11 +137,11 @@ export class DashNavCtrl {
 
     $scope.deleteDashboard = function() {
       $scope.appEvent('confirm-modal', {
-        title: 'Delete',
-        text: 'Do you want to delete this dashboard?',
+        title: '删除',
+        text: '确定要删除此仪表盘?',
         text2: $scope.dashboard.title,
         icon: 'fa-trash',
-        yesText: 'Delete',
+        yesText: '删除',
         onConfirm: function() {
           $scope.deleteDashboardConfirmed();
         }
@@ -150,7 +150,7 @@ export class DashNavCtrl {
 
     $scope.deleteDashboardConfirmed = function() {
       backendSrv.delete('/api/dashboards/db/' + $scope.dashboardMeta.slug).then(function() {
-        $scope.appEvent('alert-success', ['Dashboard Deleted', $scope.dashboard.title + ' has been deleted']);
+        $scope.appEvent('alert-success', ['删除仪表盘成功', $scope.dashboard.title + ' 已被删掉']);
         $location.url('/');
       });
     };

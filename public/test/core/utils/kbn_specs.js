@@ -37,11 +37,11 @@ define([
 
   describeValueFormat('ms', 0.0024, 0.0005, 4, '0.0024 ms');
   describeValueFormat('ms', 100, 1, 0, '100 ms');
-  describeValueFormat('ms', 1250, 10, 0, '1.25 s');
-  describeValueFormat('ms', 1250, 300, 0, '1.3 s');
-  describeValueFormat('ms', 65150, 10000, 0, '1.1 min');
-  describeValueFormat('ms', 6515000, 1500000, 0, '1.8 hour');
-  describeValueFormat('ms', 651500000, 150000000, 0, '8 day');
+  describeValueFormat('ms', 1250, 10, 0, '1.25秒');
+  describeValueFormat('ms', 1250, 300, 0, '1.3秒');
+  describeValueFormat('ms', 65150, 10000, 0, '1.1分钟');
+  describeValueFormat('ms', 6515000, 1500000, 0, '1.8小时');
+  describeValueFormat('ms', 651500000, 150000000, 0, '8天');
 
   describeValueFormat('none', 2.75e-10, 0, 10, '3e-10');
   describeValueFormat('none', 0, 0, 2, '0');
@@ -69,10 +69,10 @@ define([
   describeValueFormat('iops', 11000000000, 1000000000, -1, '11B iops');
 
   describeValueFormat('s', 24, 1, 0, '24 s');
-  describeValueFormat('s', 246, 1, 0, '4.1 min');
-  describeValueFormat('s', 24567, 100, 0, '6.82 hour');
-  describeValueFormat('s', 24567890, 10000, 0, '40.62 week');
-  describeValueFormat('s', 24567890000, 1000000, 0, '778.53 year');
+  describeValueFormat('s', 246, 1, 0, '4.1分钟');
+  describeValueFormat('s', 24567, 100, 0, '6.82小时');
+  describeValueFormat('s', 24567890, 10000, 0, '40.62周');
+  describeValueFormat('s', 24567890000, 1000000, 0, '778.53年');
 
   describeValueFormat('m', 24, 1, 0, '24 min');
   describeValueFormat('m', 246, 10, 0, '4.1 hour');
@@ -99,7 +99,7 @@ define([
   describe('kbn ms format when scaled decimals is null do not use it', function() {
     it('should use specified decimals', function() {
       var str = kbn.valueFormats['ms'](10000086.123, 1, null);
-      expect(str).to.be('2.8 hour');
+      expect(str).to.be('2.8小时');
     });
   });
 

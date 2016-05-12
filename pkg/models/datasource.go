@@ -16,8 +16,8 @@ const (
 	DS_CLOUDWATCH    = "cloudwatch"
 	DS_KAIROSDB      = "kairosdb"
 	DS_PROMETHEUS    = "prometheus"
-	DS_ACCESS_DIRECT = "direct"
-	DS_ACCESS_PROXY  = "proxy"
+	DS_ACCESS_DIRECT = "直接"
+	DS_ACCESS_PROXY  = "代理"
 )
 
 // Typed errors

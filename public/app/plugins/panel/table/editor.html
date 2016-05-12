@@ -1,11 +1,11 @@
 <div class="editor-row">
 	<div class="section">
-		<h5>Data</h5>
+		<h5>数据</h5>
 		<div class="tight-form-container">
 			<div class="tight-form">
 				<ul class="tight-form-list">
 					<li class="tight-form-item" style="width: 140px">
-						To Table Transform
+						更改表格样式
 					</li>
 					<li>
 						<select class="input-large tight-form-input"
@@ -19,7 +19,7 @@
 			<div class="tight-form">
 				<ul class="tight-form-list">
 					<li class="tight-form-item" style="width: 140px">
-						Columns
+						列
 					</li>
 					<li class="tight-form-item" ng-repeat="column in editor.panel.columns">
 						<i class="pointer fa fa-remove" ng-click="editor.removeColumn(column)"></i>
@@ -37,12 +37,12 @@
 	</div>
 
 	<div class="section">
-		<h5>Table Display</h5>
+		<h5>表格显示</h5>
 		<div class="tight-form-container">
 			<div class="tight-form">
 				<ul class="tight-form-list">
 					<li class="tight-form-item">
-						Pagination (Page size)
+						分页（页面行数）
 					</li>
 					<li>
 						<input type="number" class="input-small tight-form-input" placeholder="100"
@@ -52,7 +52,7 @@
 						<editor-checkbox text="Scroll" model="editor.panel.scroll" change="editor.render()"></editor-checkbox>
 					</li>
 					<li class="tight-form-item">
-						Font size
+						字体大小
 					</li>
 					<li>
 						<select class="input-small tight-form-input" ng-model="editor.panel.fontSize" ng-options="f for f in editor.fontSizes" ng-change="editor.render()"></select>
@@ -65,7 +65,7 @@
 </div>
 
 <div class="editor-row" style="margin-top: 20px">
-	<h5>Column Styles</h5>
+	<h5>列样式</h5>
 
 	<div class="tight-form-container">
 		<div ng-repeat="style in editor.panel.styles">
@@ -78,13 +78,13 @@
 
 				<ul class="tight-form-list">
 					<li class="tight-form-item">
-						Name or regex
+						名称或正则
 					</li>
 					<li>
 						<input type="text" ng-model="style.pattern" bs-typeahead="editor.getColumnNames" ng-blur="editor.render()" data-min-length=0 data-items=100 class="input-medium tight-form-input">
 					</li>
 					<li class="tight-form-item" style="width: 86px">
-						Type
+						类型
 					</li>
 					<li>
 						<select class="input-small tight-form-input"
@@ -97,7 +97,7 @@
 				</ul>
 				<ul class="tight-form-list" ng-if="style.type === 'date'">
 					<li class="tight-form-item">
-						Format
+						格式
 					</li>
 					<li>
 						<metric-segment-model property="style.dateFormat" options="editor.dateFormats" on-change="editor.render()" custom="true"></metric-segment-model>
@@ -108,7 +108,7 @@
 			<div class="tight-form" ng-if="style.type === 'number'">
 				<ul class="tight-form-list">
 					<li class="tight-form-item text-right" style="width: 93px">
-						Coloring
+						颜色
 					</li>
 					<li>
 						<select class="input-small tight-form-input"
@@ -119,13 +119,13 @@
 							></select>
 					</li>
 					<li class="tight-form-item">
-						Thresholds<tip>Comma seperated values</tip>
+						阈值<tip>逗号分割值</tip>
 					</li>
 					<li>
 						<input type="text" class="input-small tight-form-input" style="width: 150px" ng-model="style.thresholds" ng-blur="editor.render()" placeholder="50,80" array-join></input>
 					</li>
 					<li class="tight-form-item" style="width: 60px">
-						Colors
+						颜色
 					</li>
 					<li class="tight-form-item">
 						<spectrum-picker ng-model="style.colors[0]" ng-change="editor.render()" ></spectrum-picker>
@@ -141,7 +141,7 @@
 			<div class="tight-form" ng-if="style.type === 'number'">
 				<ul class="tight-form-list">
 					<li class="tight-form-item text-right" style="width: 93px">
-						Unit
+						单位
 					</li>
 					<li class="dropdown" style="width: 150px"
 						ng-model="style.unit"
@@ -149,7 +149,7 @@
 						dropdown-typeahead-on-select="editor.setUnitFormat(style, $subItem)">
 					</li>
 					<li class="tight-form-item" style="width: 86px">
-						Decimals
+						小数位
 					</li>
 					<li style="width: 105px">
 						<input type="number" class="input-mini tight-form-input" ng-model="style.decimals" ng-change="render()" ng-model-onblur>
@@ -162,7 +162,7 @@
 	</div>
 
 	<button class="btn btn-inverse" style="margin-top: 20px" ng-click="editor.addColumnStyle()">
-		Add column style rule
+		添加列样式规则
 	</button>
 </div>
 

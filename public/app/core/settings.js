@@ -9,7 +9,7 @@ function (_) {
       datasources                   : {},
       window_title_prefix           : 'Grafana - ',
       panels                        : {},
-      new_panel_title: 'Panel Title',
+      new_panel_title: '未命名',
       playlist_timespan: "1m",
       unsaved_changes_warning: true,
       appSubUrl: ""

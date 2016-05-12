@@ -1,60 +1,60 @@
 <div class="editor-row">
   <div class="section gf-form-group">
-    <h5 class="section-heading">Draw Modes</h5>
+    <h5 class="section-heading">画图模式</h5>
 		<gf-form-switch class="gf-form"
-			label="Bars" label-class="width-5"
+			label="柱" label-class="width-5"
 			checked="ctrl.panel.bars" on-change="ctrl.render()">
 		</gf-form-switch>
 		<gf-form-switch class="gf-form"
-			label="Lines" label-class="width-5"
+			label="线" label-class="width-5"
 			checked="ctrl.panel.lines" on-change="ctrl.render()">
 		</gf-form-switch>
 		<gf-form-switch class="gf-form"
-			label="Points" label-class="width-5"
+			label="点" label-class="width-5"
 			checked="ctrl.panel.points" on-change="ctrl.render()">
 		</gf-form-switch>
 	</div>
 	<div class="section gf-form-group">
-		<h5 class="section-heading">Mode Options</h5>
+		<h5 class="section-heading">模式选项</h5>
 		<div class="gf-form" ng-show="ctrl.panel.lines">
-			<label class="gf-form-label width-8">Fill</label>
+			<label class="gf-form-label width-8">填充</label>
 			<div class="gf-form-select-wrapper max-width-5">
 				<select class="gf-form-input" ng-model="ctrl.panel.fill" ng-options="f for f in [0,1,2,3,4,5,6,7,8,9,10]" ng-change="ctrl.render()"></select>
 			</div>
 		</div>
 		<div class="gf-form" ng-show="ctrl.panel.lines">
-			<label class="gf-form-label width-8">Line Width</label>
+			<label class="gf-form-label width-8">线宽度</label>
 			<div class="gf-form-select-wrapper max-width-5">
 				<select class="gf-form-input" ng-model="ctrl.panel.linewidth" ng-options="f for f in [0,1,2,3,4,5,6,7,8,9,10]" ng-change="ctrl.render()"></select>
 			</div>
 		</div>
 		<div class="gf-form" ng-show="ctrl.panel.points">
-			<label class="gf-form-label width-8">Point Radius</label>
+			<label class="gf-form-label width-8">点半径</label>
 			<div class="gf-form-select-wrapper max-width-5">
 				<select class="gf-form-input" ng-model="ctrl.panel.pointradius" ng-options="f for f in [1,2,3,4,5,6,7,8,9,10]" ng-change="ctrl.render()"></select>
 			</div>
 		</div>
 		<gf-form-switch class="gf-form"
-			label="Staircase" label-class="width-8"
+			label="阶梯显示" label-class="width-8"
 			checked="ctrl.panel.steppedLine" on-change="ctrl.render()">
 		</gf-form-switch>
 	</div>
 	<div class="section gf-form-group">
-		<h5 class="section-heading">Misc options</h5>
+		<h5 class="section-heading">其他选项</h5>
 		<div class="gf-form">
-			<label class="gf-form-label width-7">Null value</label>
+			<label class="gf-form-label width-7">空值</label>
 			<div class="gf-form-select-wrapper">
 				<select class="gf-form-input max-width-8" ng-model="ctrl.panel.nullPointMode" ng-options="f for f in ['connected', 'null', 'null as zero']" ng-change="ctrl.render()"></select>
 			</div>
 		</div>
 		<div class="gf-form">
-			<label class="gf-form-label width-7">Renderer</label>
+			<label class="gf-form-label width-7">渲染</label>
 			<div class="gf-form-select-wrapper max-width-8">
 				<select class="gf-form-input" ng-model="ctrl.panel.renderer" ng-options="f for f in ['flot', 'png']" ng-change="ctrl.render()"></select>
 			</div>
 		</div>
 		<div class="gf-form">
-			<label class="gf-form-label width-7">Tooltip mode</label>
+			<label class="gf-form-label width-7">提示模式</label>
 			<div class="gf-form-select-wrapper max-width-8">
 				<select class="gf-form-input" ng-model="ctrl.panel.tooltip.shared" ng-options="f.value as f.text for f in [{text: 'All series', value: true}, {text: 'Single', value: false}]" ng-change="ctrl.render()"></select>
 			</div>
@@ -62,17 +62,17 @@
 	</div>
 
 	<div class="section gf-form-group">
-		<h5 class="section-heading">Multiple Series</h5>
+		<h5 class="section-heading">多项显示</h5>
 		<gf-form-switch class="gf-form"
-			label="Stack" label-class="width-7"
+			label="叠加显示" label-class="width-7"
 			checked="ctrl.panel.stack" on-change="ctrl.render()">
 		</gf-form-switch>
 		<gf-form-switch class="gf-form" ng-show="ctrl.panel.stack"
-			label="Percent" label-class="width-7"
+			label="按百分比" label-class="width-7"
 			checked="ctrl.panel.percentage" on-change="ctrl.render()">
 		</gf-form-switch>
 		<div class="gf-form" ng-show="ctrl.panel.stack">
-			<label class="gf-form-label width-7">Tooltip value</label>
+			<label class="gf-form-label width-7">提示数值</label>
 			<div class="gf-form-select-wrapper max-width-8">
 				<select class="gf-form-input" ng-model="ctrl.panel.tooltip.value_type" ng-options="f for f in ['cumulative','individual']" ng-change="ctrl.render()"></select>
 			</div>
@@ -83,7 +83,7 @@
 
 <div class="editor-row">
 	<div class="section gf-form-group">
-		<h5>Series specific overrides <tip>Regex match example: /server[0-3]/i </tip></h5>
+		<h5>覆盖显示指定项 <tip>支持正则匹配覆盖 举例: /server[0-3]/i </tip></h5>
 		<div class="tight-form-container">
 			<div class="tight-form" ng-repeat="override in ctrl.panel.seriesOverrides" ng-controller="SeriesOverridesCtrl">
 				<ul class="tight-form-list">
@@ -92,7 +92,7 @@
 					</li>
 
 					<li class="tight-form-item">
-						alias or regex
+						别名或正则
 					</li>
 
 					<li>
@@ -102,7 +102,7 @@
 					<li class="tight-form-item" ng-repeat="option in currentOverrides">
 						<i class="pointer fa fa-remove" ng-click="removeOverride(option)"></i>
 						<span ng-show="option.propertyName === 'color'">
-							Color: <i class="fa fa-circle" ng-style="{color:option.value}"></i>
+							颜色: <i class="fa fa-circle" ng-style="{color:option.value}"></i>
 						</span>
 						<span ng-show="option.propertyName !== 'color'">
 							{{option.name}}: {{option.value}}
@@ -117,7 +117,7 @@
 		</div>
 
 		<button class="btn btn-inverse" style="margin-top: 20px" ng-click="ctrl.addSeriesOverride()">
-			Add series specific option
+			添加指定项
 		</button>
 	</div>
 </div>

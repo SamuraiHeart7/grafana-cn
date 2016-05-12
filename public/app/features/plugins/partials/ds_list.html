@@ -1,15 +1,15 @@
 <navbar
-	title="Data Sources"
+	title="数据源"
 	title-url="datasources"
 	icon="icon-gf icon-gf-datasources">
 </navbar>
 
 <div class="page-container">
 	<div class="page-header">
-		<h1>Data Sources</h1>
+		<h1>数据源</h1>
 		<a class="btn btn-success" href="datasources/new">
 			<i class="fa fa-plus"></i>
-			Add data source
+			添加
 		</a>
 	</div>
 
@@ -32,7 +32,7 @@
 							<div class="card-item-name">
 								{{ds.name}}
 								<span ng-if="ds.isDefault">
-									<span class="btn btn-secondary btn-mini">default</span>
+									<span class="btn btn-secondary btn-mini">默认</span>
 								</span>
 							</div>
 							<div class="card-item-sub-name">
@@ -46,7 +46,7 @@
 	</section>
 
 	<div ng-if="ctrl.datasources.length === 0">
-		<em>No data sources defined</em>
+		<em>还没有添加任何数据源!</em>
 	</div>
 
 </div>

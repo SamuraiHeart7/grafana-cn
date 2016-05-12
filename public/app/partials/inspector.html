@@ -1,11 +1,11 @@
 <div class="modal-body" ng-controller="InspectCtrl" ng-init="init()">
 	<div class="modal-header">
 		<h2 class="modal-header-title">
-			Inspector
+			检查
 		</h2>
 
 		<ul class="gf-tabs">
-			<li class="gf-tabs-item" ng-repeat="tab in ['Request', 'Response', 'JS Error']">
+			<li class="gf-tabs-item" ng-repeat="tab in ['请求', '响应', 'JS 错误']">
 				<a class="gf-tabs-link" ng-click="editor.index = $index" ng-class="{active: editor.index === $index}">
 					{{::tab}}
 				</a>
@@ -23,11 +23,11 @@
 			<h5 class="section-heading">Request details</h5>
 			<table class="filter-table gf-form-group">
 				<tr>
-					<td>Url</td>
+					<td>地址</td>
 					<td>{{inspector.error.config.url}}</td>
 				</tr>
 				<tr>
-					<td>Method</td>
+					<td>方法</td>
 					<td>{{inspector.error.config.method}}</td>
 				</tr>
 				<tr ng-repeat="(key, value) in inspector.error.config.headers">
@@ -40,7 +40,7 @@
 				</tr>
 			</table>
 
-			<h5 class="section-heading">Request parameters</h5>
+			<h5 class="section-heading">请求参数</h5>
 			<table class="filter-table">
 				<tr ng-repeat="param in request_parameters">
 					<td>
@@ -64,10 +64,10 @@
 
 			<label>Message:</label>
 <pre>
-{{message}}
+{{信息}}
 </pre>
 
-			<label>Stack trace:</label>
+			<label>堆栈跟踪:</label>
 			<pre>
 			{{stack_trace}}
 		</pre>

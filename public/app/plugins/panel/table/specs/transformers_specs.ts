@@ -91,7 +91,7 @@ describe('when transforming time series table', () => {
 
       it('should return 2 columns', () => {
         expect(table.columns.length).to.be(3);
-        expect(table.columns[0].text).to.be('Metric');
+        expect(table.columns[0].text).to.be('监控项');
         expect(table.columns[1].text).to.be('Max');
         expect(table.columns[2].text).to.be('Min');
       });

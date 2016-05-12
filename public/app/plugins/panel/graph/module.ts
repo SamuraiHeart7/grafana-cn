@@ -125,9 +125,9 @@ class GraphCtrl extends MetricsPanelCtrl {
   }
 
   onInitEditMode() {
-    this.addEditorTab('Axes', 'public/app/plugins/panel/graph/tab_axes.html', 2);
-    this.addEditorTab('Legend', 'public/app/plugins/panel/graph/tab_legend.html', 3);
-    this.addEditorTab('Display', 'public/app/plugins/panel/graph/tab_display.html', 4);
+    this.addEditorTab('坐标轴', 'public/app/plugins/panel/graph/tab_axes.html', 2);
+    this.addEditorTab('标注', 'public/app/plugins/panel/graph/tab_legend.html', 3);
+    this.addEditorTab('可视化', 'public/app/plugins/panel/graph/tab_display.html', 4);
 
     this.logScales = {
       'linear': 1,
@@ -140,9 +140,9 @@ class GraphCtrl extends MetricsPanelCtrl {
   }
 
   onInitPanelActions(actions) {
-    actions.push({text: 'Export CSV (series as rows)', click: 'ctrl.exportCsv()'});
-    actions.push({text: 'Export CSV (series as columns)', click: 'ctrl.exportCsvColumns()'});
-    actions.push({text: 'Toggle legend', click: 'ctrl.toggleLegend()'});
+    actions.push({text: '导出到CSV(x轴做行)', click: 'ctrl.exportCsv()'});
+    actions.push({ text: '导出到CSV(x轴做列)', click: 'ctrl.exportCsvColumns()' });
+    actions.push({text: '标注显示开关', click: 'ctrl.toggleLegend()'});
   }
 
   setUnitFormat(axis, subItem) {

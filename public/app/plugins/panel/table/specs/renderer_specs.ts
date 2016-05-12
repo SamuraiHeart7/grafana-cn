@@ -65,7 +65,7 @@ describe('when rendering table', () => {
 
     it('number column should be formated', () => {
       var html = renderer.renderCell(1, 1230);
-      expect(html).to.be('<td>1.230 s</td>');
+      expect(html).to.be('<td>1.230秒</td>');
     });
 
     it('number style should ignore string values', () => {

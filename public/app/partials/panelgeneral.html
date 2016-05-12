@@ -1,29 +1,29 @@
 <div class="gf-form-group">
 	<div class="gf-form-inline">
 		<div class="gf-form max-width-21">
-			<span class="gf-form-label width-8">Title</span>
+			<span class="gf-form-label width-8">标题</span>
 			<input type="text" class="gf-form-input" ng-model='ctrl.panel.title'></input>
 		</div>
 		<div class="gf-form">
-			<span class="gf-form-label width-6">Span</span>
+			<span class="gf-form-label width-6">长度</span>
 			<select class="gf-form-input gf-size-auto" ng-model="ctrl.panel.span" ng-options="f for f in [0,1,2,3,4,5,6,7,8,9,10,11,12]"></select>
 		</div>
 		<div class="gf-form max-width-26">
-			<span class="gf-form-label width-8">Height</span>
+			<span class="gf-form-label width-8">高度</span>
 			<input type="text" class="gf-form-input max-width-6" ng-model='ctrl.panel.height' placeholder="100px"></input>
-			<editor-checkbox text="Transparent" model="ctrl.panel.transparent"></editor-checkbox>
+			<editor-checkbox text="透明" model="ctrl.panel.transparent"></editor-checkbox>
 		</div>
 	</div>
 
 	<div class="gf-form-inline">
 		<div class="gf-form max-width-21">
-			<span class="gf-form-label width-8">Repeat Panel</span>
+			<span class="gf-form-label width-8">重复面板</span>
 			<select class="gf-form-input" ng-model="ctrl.panel.repeat" ng-options="f.name as f.name for f in ctrl.dashboard.templating.list">
 				<option value=""></option>
 			</select>
 		</div>
 		<div class="gf-form">
-			<span class="gf-form-label width-6">Min span</span>
+			<span class="gf-form-label width-6">最小长度</span>
 			<select class="gf-form-input" ng-model="ctrl.panel.minSpan" ng-options="f for f in [1,2,3,4,5,6,7,8,9,10,11,12]">
 				<option value=""></option>
 			</select>

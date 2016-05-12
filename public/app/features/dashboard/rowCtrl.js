@@ -47,10 +47,10 @@ function (angular, _, config) {
       }
 
       $scope.appEvent('confirm-modal', {
-        title: 'Delete',
-        text: 'Are you sure you want to delete this row?',
+        title: '删除',
+        text: '确定要删除这一行么？',
         icon: 'fa-trash',
-        yesText: 'Delete',
+        yesText: '删除',
         onConfirm: function() {
           delete_row();
         }

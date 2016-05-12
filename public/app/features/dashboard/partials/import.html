@@ -1,11 +1,13 @@
-<navbar title="Import" title-url="import/dashboard" icon="fa fa-download">
+<navbar title="导入" title-url="import/dashboard" icon="fa fa-download">
 </navbar>
 
 <div class="page-container">
 	<div class="page-header">
 		<h1>
-			Import file
-			<em style="font-size: 14px;padding-left: 10px;"> <i class="fa fa-info-circle"></i> Load dashboard from local .json file</em>
+			导入文件
+			<em style="font-size: 14px;padding-left: 10px;">
+			<i class="fa fa-info-circle">
+			</i>从本地json文件导入仪表盘</em>
 		</h1>
 	</div>
 
@@ -16,19 +18,19 @@
 	</div>
 
 	<h5 class="section-heading">
-		Migrate dashboards
-		<em style="font-size: 14px;padding-left: 10px;"><i class="fa fa-info-circle"></i> Import dashboards from Elasticsearch or InfluxDB</em>
+		迁移仪表盘
+		<em style="font-size: 14px;padding-left: 10px;"><i class="fa fa-info-circle"></i> 从Elasticsearch或InfluxDB中导入</em>
 	</h5>
 
 	<div class="gf-form-inline gf-form-group">
 		<div class="gf-form">
-			<div class="gf-form-label">Dashboard source</div>
+			<div class="gf-form-label">数据源</div>
 			<div class="gf-form-select-wrapper">
 				<select class="gf-form-input gf-size-auto" ng-model="sourceName" ng-options="f for f in datasources"></select>
 			</div>
 		</div>
 		<div class="gf-form">
-			<button class="btn btn-success gf-form-btn" ng-click="startImport()">Import</button>
+			<button class="btn btn-success gf-form-btn" ng-click="startImport()">导入</button>
 		</div>
 	</div>
 

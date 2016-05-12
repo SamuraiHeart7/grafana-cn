@@ -1,20 +1,20 @@
-<navbar icon="icon-gf icon-gf-users" title="Organization" title-url="org">
+<navbar icon="icon-gf icon-gf-users" title="部门" title-url="org">
 </navbar>
 
 <div class="page-container">
 	<div class="page-header">
-		<h1>Org Preferences</h1>
+		<h1>部门信息</h1>
 	</div>
 
-	<h3 class="page-heading">General</h3>
+	<h3 class="page-heading">基本</h3>
 	<form name="orgForm" class="gf-form-group">
 		<div class="gf-form-inline">
 			<div class="gf-form max-width-28">
-				<span class="gf-form-label width-6">Name</span>
+				<span class="gf-form-label width-6">名称</span>
 				<input class="gf-form-input" type="text" required ng-model="org.name">
 			</div>
 			<div class="gf-form">
-				<button type="submit" class="btn gf-form-btn btn-success" ng-click="update()">Update</button>
+				<button type="submit" class="btn gf-form-btn btn-success" ng-click="update()">更新</button>
 			</div>
 		</div>
 	</form>
@@ -26,39 +26,39 @@
 	<form name="addressForm" class="gf-form-group">
 		<div class="gf-form-inline">
 			<div class="gf-form max-width-28">
-				<span class="gf-form-label width-7">Address1</span>
+				<span class="gf-form-label width-7">地址1</span>
 				<input class="gf-form-input" type="text" ng-model="address.address1">
 			</div>
 			<div class="gf-form max-width-28">
-				<span class="gf-form-label width-7">Address2</span>
+				<span class="gf-form-label width-7">地址2</span>
 				<input class="gf-form-input" type="text" ng-model="address.address2">
 			</div>
 		</div>
 
 		<div class="gf-form-inline">
 			<div class="gf-form max-width-28">
-				<span class="gf-form-label width-7">City</span>
+				<span class="gf-form-label width-7">城市</span>
 				<input class="gf-form-input" type="text" ng-model="address.city">
 			</div>
 			<div class="gf-form max-width-28">
-				<span class="gf-form-label width-7">Postal code</span>
+				<span class="gf-form-label width-7">邮编</span>
 				<input class="gf-form-input" type="text" ng-model="address.zipCode">
 			</div>
 		</div>
 
 		<div class="gf-form-inline">
 			<div class="gf-form max-width-28">
-				<span class="gf-form-label width-7">State</span>
+				<span class="gf-form-label width-7">省</span>
 				<input class="gf-form-input" type="text" ng-model="address.state">
 			</div>
 			<div class="gf-form max-width-28">
-				<span class="gf-form-label width-7">Country</span>
+				<span class="gf-form-label width-7">国家</span>
 				<input class="gf-form-input" type="text" ng-model="address.country">
 			</div>
 		</div>
 
 		<div class="gf-form-button-row">
-			<button type="submit" class="btn btn-success" ng-click="updateAddress()">Update</button>
+			<button type="submit" class="btn btn-success" ng-click="updateAddress()">更新</button>
 		</div>
 	</form>
 
