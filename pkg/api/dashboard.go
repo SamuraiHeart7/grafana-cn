@@ -37,7 +37,7 @@ func GetDashboard(c *middleware.Context) {
 	query := m.GetDashboardQuery{Slug: slug, OrgId: c.OrgId}
 	err := bus.Dispatch(&query)
 	if err != nil {
-		c.JsonApiErr(404, "Dashboard not found", nil)
+		c.JsonApiErr(404, "未找到仪表盘", nil)
 		return
 	}
 
@@ -95,13 +95,13 @@ func DeleteDashboard(c *middleware.Context) {
 
 	query := m.GetDashboardQuery{Slug: slug, OrgId: c.OrgId}
 	if err := bus.Dispatch(&query); err != nil {
-		c.JsonApiErr(404, "Dashboard not found", nil)
+		c.JsonApiErr(404, "未找到仪表盘", nil)
 		return
 	}
 
 	cmd := m.DeleteDashboardCommand{Slug: slug, OrgId: c.OrgId}
 	if err := bus.Dispatch(&cmd); err != nil {
-		c.JsonApiErr(500, "Failed to delete dashboard", err)
+		c.JsonApiErr(500, "删除仪表盘失败", err)
 		return
 	}
 
@@ -175,12 +175,16 @@ func GetHomeDashboard(c *middleware.Context) Response {
 		} else {
 			log.Warn("Failed to get slug from database, %s", err.Error())
 		}
+
+		dashRedirect := dtos.DashboardRedirect{RedirectUri: "db/" + slugQuery.Result}
+		c.JSON(200, &dashRedirect)
+		return
 	}
 
 	filePath := path.Join(setting.StaticRootPath, "dashboards/home.json")
 	file, err := os.Open(filePath)
 	if err != nil {
-		return ApiError(500, "Failed to load home dashboard", err)
+		return ApiError(500, "加载主页失败", err)
 	}
 
 	dash := dtos.DashboardFullWithMeta{}
@@ -188,7 +192,7 @@ func GetHomeDashboard(c *middleware.Context) Response {
 	dash.Meta.CanEdit = canEditDashboard(c.OrgRole)
 	jsonParser := json.NewDecoder(file)
 	if err := jsonParser.Decode(&dash.Dashboard); err != nil {
-		return ApiError(500, "Failed to load home dashboard", err)
+		return ApiError(500, "加载主页失败", err)
 	}
 
 	return Json(200, &dash)
@@ -199,7 +203,7 @@ func GetDashboardFromJsonFile(c *middleware.Context) {
 
 	dashboard := search.GetDashboardFromJsonIndex(file)
 	if dashboard == nil {
-		c.JsonApiErr(404, "Dashboard not found", nil)
+		c.JsonApiErr(404, "未找到仪表盘", nil)
 		return
 	}
 
@@ -214,7 +218,7 @@ func GetDashboardTags(c *middleware.Context) {
 	query := m.GetDashboardTagsQuery{OrgId: c.OrgId}
 	err := bus.Dispatch(&query)
 	if err != nil {
-		c.JsonApiErr(500, "Failed to get tags from database", err)
+		c.JsonApiErr(500, "从数据库获得标签失败", err)
 		return
 	}
 

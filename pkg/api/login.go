@@ -81,11 +81,11 @@ func tryLoginUsingRememberCookie(c *middleware.Context) bool {
 
 func LoginApiPing(c *middleware.Context) {
 	if !tryLoginUsingRememberCookie(c) {
-		c.JsonApiErr(401, "Unauthorized", nil)
+		c.JsonApiErr(401, "认证失败", nil)
 		return
 	}
 
-	c.JsonOK("Logged in")
+	c.JsonOK("登陆成功")
 }
 
 func LoginPost(c *middleware.Context, cmd dtos.LoginCommand) Response {
@@ -96,7 +96,7 @@ func LoginPost(c *middleware.Context, cmd dtos.LoginCommand) Response {
 
 	if err := bus.Dispatch(&authQuery); err != nil {
 		if err == login.ErrInvalidCredentials {
-			return ApiError(401, "Invalid username or password", err)
+			return ApiError(401, "错误的用户名或密码", err)
 		}
 
 		return ApiError(500, "Error while trying to authenticate user", err)
@@ -107,7 +107,7 @@ func LoginPost(c *middleware.Context, cmd dtos.LoginCommand) Response {
 	loginUserWithUser(user, c)
 
 	result := map[string]interface{}{
-		"message": "Logged in",
+		"message": "登陆成功",
 	}
 
 	if redirectTo, _ := url.QueryUnescape(c.GetCookie("redirect_to")); len(redirectTo) > 0 {

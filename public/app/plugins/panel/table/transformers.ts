@@ -76,17 +76,17 @@ transformers['timeseries_aggregations'] = {
   description: 'Time series aggregations',
   getColumns: function() {
     return [
-      {text: 'Avg', value: 'avg'},
-      {text: 'Min', value: 'min'},
-      {text: 'Max', value: 'max'},
-      {text: 'Total', value: 'total'},
-      {text: 'Current', value: 'current'},
-      {text: 'Count', value: 'count'},
+      {text: '平均值', value: 'avg'},
+      {text: '最小值', value: 'min'},
+      {text: '最大值', value: 'max'},
+      {text: '总值', value: 'total'},
+      {text: '当前值', value: 'current'},
+      {text: '计数', value: 'count'},
     ];
   },
   transform: function(data, panel, model) {
     var i, y;
-    model.columns.push({text: 'Metric'});
+    model.columns.push({text: '监控项'});
 
     if (panel.columns.length === 0) {
       panel.columns.push({text: 'Avg', value: 'avg'});

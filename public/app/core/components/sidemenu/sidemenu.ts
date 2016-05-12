@@ -39,26 +39,26 @@ export class SideMenuCtrl {
 
  openUserDropdown() {
    this.orgMenu = [
-     {section: 'You', cssClass: 'dropdown-menu-title'},
-     {text: 'Profile', url: this.getUrl('/profile')},
+     {section: '个人', cssClass: 'dropdown-menu-title'},
+     {text: '设置', url: this.getUrl('/profile')},
    ];
 
    if (this.isSignedIn) {
-     this.orgMenu.push({text: "Sign out", url: this.getUrl("/logout"), target: "_self"});
+     this.orgMenu.push({text: "退出登陆", url: this.getUrl("/logout"), target: "_self"});
    }
 
    if (this.contextSrv.hasRole('Admin')) {
      this.orgMenu.push({section: this.user.orgName, cssClass: 'dropdown-menu-title'});
      this.orgMenu.push({
-       text: "Preferences",
+       text: "部门设置",
        url: this.getUrl("/org"),
      });
      this.orgMenu.push({
-       text: "Users",
+       text: "人员设置",
        url: this.getUrl("/org/users"),
      });
      this.orgMenu.push({
-       text: "API Keys",
+       text: "API设置",
        url: this.getUrl("/org/apikeys"),
      });
    }
@@ -72,7 +72,7 @@ export class SideMenuCtrl {
        }
 
        this.orgMenu.push({
-         text: "Switch to " + org.name,
+         text: "切换到 " + org.name,
          icon: "fa fa-fw fa-random",
          url: this.getUrl('/profile/switch-org/' + org.orgId),
          target: '_self'
@@ -80,7 +80,7 @@ export class SideMenuCtrl {
      });
 
      if (config.allowOrgCreate) {
-       this.orgMenu.push({text: "New organization", icon: "fa fa-fw fa-plus", url: this.getUrl('/org/new')});
+       this.orgMenu.push({text: "添加部门", icon: "fa fa-fw fa-plus", url: this.getUrl('/org/new')});
      }
    });
  }

@@ -16,7 +16,7 @@ func GetDataSources(c *middleware.Context) {
 	query := m.GetDataSourcesQuery{OrgId: c.OrgId}
 
 	if err := bus.Dispatch(&query); err != nil {
-		c.JsonApiErr(500, "Failed to query datasources", err)
+		c.JsonApiErr(500, "数据源查询失败", err)
 		return
 	}
 
@@ -85,7 +85,7 @@ func DeleteDataSource(c *middleware.Context) {
 		return
 	}
 
-	c.JsonOK("Data source deleted")
+	c.JsonOK("成功删除数据源")
 }
 
 func AddDataSource(c *middleware.Context, cmd m.AddDataSourceCommand) {
@@ -105,11 +105,11 @@ func UpdateDataSource(c *middleware.Context, cmd m.UpdateDataSourceCommand) {
 
 	err := bus.Dispatch(&cmd)
 	if err != nil {
-		c.JsonApiErr(500, "Failed to update datasource", err)
+		c.JsonApiErr(500, "更新数据源失败", err)
 		return
 	}
 
-	c.JsonOK("Datasource updated")
+	c.JsonOK("更新数据源成功")
 }
 
 // Get /api/datasources/name/:name

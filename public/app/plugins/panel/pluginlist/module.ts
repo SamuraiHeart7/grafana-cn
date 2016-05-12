@@ -22,9 +22,9 @@ class PluginListCtrl extends PanelCtrl {
     this.events.on('init-edit-mode', this.onInitEditMode.bind(this));
     this.pluginList = [];
     this.viewModel = [
-      {header: "Installed Apps", list: [], type: 'app'},
-      {header: "Installed Panels", list: [], type: 'panel'},
-      {header: "Installed Datasources", list: [], type: 'datasource'},
+      {header: "已安装的应用", list: [], type: 'app'},
+      {header: "已安装的面板", list: [], type: 'panel'},
+      {header: "已安装的数据源", list: [], type: 'datasource'},
     ];
 
     this.update();
@@ -32,7 +32,7 @@ class PluginListCtrl extends PanelCtrl {
 
   onInitEditMode() {
     this.editorTabIndex = 1;
-    this.addEditorTab('Options', 'public/app/plugins/panel/pluginlist/editor.html');
+    this.addEditorTab('选项', 'public/app/plugins/panel/pluginlist/editor.html');
   }
 
   gotoPlugin(plugin, evt) {

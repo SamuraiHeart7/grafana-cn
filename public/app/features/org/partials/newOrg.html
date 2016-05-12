@@ -1,22 +1,25 @@
-<navbar title="Organization" icon="icon-gf icon-gf-users">
+<navbar title="部门" icon="icon-gf icon-gf-users">
 </navbar>
 
 <div class="page-container" ng-form="playlistEditForm">
 	<div class="page-header">
-		<h1>New Organization</h1>
+		<h1>创建部门</h1>
 	</div>
 
-	<p class="playlist-description">Each organization contains their own dashboards, data sources and configuration, and cannot be shared between orgs. While users may belong to more than one, mutiple organization are most frequently used in multi-tenant deployments. </p>
+	<p class="playlist-description">
+	每个部门都有自己独有的数据源, 仪表盘和配置, 不用部门间不能共用.
+    然而当某个用户属于多个部门时, 多个部门经常用'多租户'式部署.
+    </p>
 
 	<form>
 		<div class="gf-form-group">
 			<div class="gf-form">
-				<span class="gf-form-label width-10">Org. name</span>
+				<span class="gf-form-label width-10">部门名称</span>
 				<input type="text" ng-model="newOrg.name" required class="gf-form-input max-width-21" placeholder="organization name">
 			</div>
 			<br>
 			<div class="gf-form-buttons-row">
-				<button type="submit" class="btn btn-success" ng-click="createOrg()">Create</button>
+				<button type="submit" class="btn btn-success" ng-click="createOrg()">创建</button>
 			</div>
 		</div>
 	</form>

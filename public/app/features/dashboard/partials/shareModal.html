@@ -31,8 +31,7 @@
 		</div>
 		<div class="share-modal-content">
 			<p class="share-modal-info-text">
-				The html code below can be pasted and included in another web page. Unless anonymous access
-				is enabled the user viewing that page need to be signed into grafana for the graph to load.
+				如果开启了Grafana的匿名访问，下面的网页代码可以直接粘贴到其他web页面使用
 			</p>
 
 			<div ng-include src="'shareLinkOptions.html'"></div>
@@ -107,30 +106,27 @@
       <div class="share-modal-content">
         <div ng-if="step === 1">
           <p class="share-modal-info-text">
-            A snapshot is an instant way to share an interactive dashboard publicly.
-            When created, we <strong>strip sensitive data</strong> like queries (metric, template and annotation) and panel links,
-            leaving only the visible metric data and series names embedded into your dashboard.
+            快照是公开交互仪表板的一种方式，创建时，Grafana会<strong>去除敏感信息</strong>(例如：采集项、模板和事件)，
+				只保留可视化结果。
           </p>
           <p class="share-modal-info-text">
-            Keep in mind, your <strong>snapshot can be viewed by anyone</strong> that has the link and can reach the URL.
-            Share wisely.
+            注意, 通过这个链接，您的<strong>快照可以被任何人访问</strong>，分享需谨慎。
           </p>
         </div>
 
 				<div class="share-modal-header" ng-if="step === 3">
 					<p class="share-modal-info-text">
-						The snapshot has now been deleted. If it you have already accessed it once, It might take up to an hour before it is removed from
-						browser caches or CDN caches.
+						此快照现在已经被删除，如果您曾经访问过，由于CDN cache或浏览器缓存可能需要等1个小时才会彻底被移除。
 					</p>
 				</div>
 
 				<div class="gf-form-group share-modal-options">
 					<div class="gf-form" ng-if="step === 1">
-						<span class="gf-form-label width-12">Snapshot name</span>
+						<span class="gf-form-label width-12">快照名称</span>
 						<input type="text" ng-model="snapshot.name" class="gf-form-input max-width-15" >
 					</div>
 					<div class="gf-form" ng-if="step === 1">
-						<span class="gf-form-label width-12">Expire</span>
+						<span class="gf-form-label width-12">过期</span>
 						<div class="gf-form-select-wrapper max-width-15">
 							<select class="gf-form-input" ng-model="snapshot.expires" ng-options="f.value as f.text for f in expireOptions"></select>
 						</div>
@@ -151,7 +147,7 @@
 				<div ng-if="step === 1" class="gf-form-button-row">
 					<button class="btn gf-form-btn width-10 btn-success" ng-click="createSnapshot()" ng-disabled="loading">
 						<i class="fa fa-save"></i>
-						Local Snapshot
+						本地快照
 					</button>
 					<button class="btn gf-form-btn width-16 btn-secondary" ng-if="externalEnabled" ng-click="createSnapshot(true)" ng-disabled="loading">
 						<i class="fa fa-cloud-upload"></i>
@@ -161,7 +157,7 @@
 				</div>
 
 				<div class="pull-right" ng-if="step === 2" style="padding: 5px">
-					Did you make a mistake? <a class="pointer" ng-click="deleteSnapshot()" target="_blank">delete snapshot.</a>
+					您遇到了错误？ <a class="pointer" ng-click="deleteSnapshot()" target="_blank">delete snapshot.</a>
 				</div>
 			</div>
 		</div>

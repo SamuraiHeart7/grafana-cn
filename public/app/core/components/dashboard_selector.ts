@@ -8,7 +8,7 @@ import coreModule from 'app/core/core_module';
 var template = `
 <select class="gf-form-input" ng-model="ctrl.model" ng-options="f.value as f.text for f in ctrl.options"></select>
 <info-popover mode="right-absolute">
-  Not finding dashboard you want? Star it first, then it should appear in this select box.
+  没有找到你想要的仪表盘? 被收藏的(点击仪表盘顶部的五角星),才会出现在这里.
 </info-popover>
 `;
 

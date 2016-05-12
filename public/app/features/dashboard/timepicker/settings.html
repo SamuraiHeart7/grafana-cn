@@ -1,15 +1,15 @@
 <div class="editor-row">
 <div class="gf-form-group">
 	<div class="gf-form">
-		<span class="gf-form-label width-10">Auto-refresh</span>
+		<span class="gf-form-label width-10">自动刷新间隔</span>
 		<input type="text" class="gf-form-input max-width-25" ng-model="ctrl.panel.refresh_intervals" array-join>
 	</div>
 	<div class="gf-form">
-		<span class="gf-form-label width-10">Now delay now-</span>
+		<span class="gf-form-label width-10">时间回退-</span>
 		<input type="text" class="gf-form-input max-width-25"
 				ng-model="ctrl.panel.nowDelay" placeholder="0m"
 				valid-time-span
-				bs-tooltip="'Enter 1m to ignore the last minute (because it can contain incomplete metrics)'"
+				bs-tooltip="'填写1m,可以忽略最近1分钟数据, 因为有可能是不完整的数据'"
 				data-placement="right">
 	</div>
 </div>

@@ -74,7 +74,7 @@ func AdminUpdateUserPassword(c *middleware.Context, form dtos.AdminUpdateUserPas
 		return
 	}
 
-	c.JsonOK("User password updated")
+	c.JsonOK("成功更新密码")
 }
 
 func AdminUpdateUserPermissions(c *middleware.Context, form dtos.AdminUpdateUserPermissionsForm) {
@@ -90,7 +90,7 @@ func AdminUpdateUserPermissions(c *middleware.Context, form dtos.AdminUpdateUser
 		return
 	}
 
-	c.JsonOK("User permissions updated")
+	c.JsonOK("成功更新用户权限")
 }
 
 func AdminDeleteUser(c *middleware.Context) {
@@ -103,5 +103,5 @@ func AdminDeleteUser(c *middleware.Context) {
 		return
 	}
 
-	c.JsonOK("User deleted")
+	c.JsonOK("成功删除用户")
 }

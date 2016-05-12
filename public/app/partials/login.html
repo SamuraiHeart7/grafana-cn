@@ -10,25 +10,25 @@
     <div class="login-inner-box">
 			<div class="login-tab-header">
 				<button class="btn-login-tab" ng-click="loginMode = true;" ng-class="{active: loginMode}">
-					Log in
+					登陆
 				</button>
 				<button class="btn-login-tab" ng-click="loginMode = false;" ng-class="{active: !loginMode}" ng-show="!disableUserSignUp">
-					Sign up
+					注册
 				</button>
 			</div>
 
       <form name="loginForm" class="login-form gf-form-group">
 				<div class="gf-form" ng-if="loginMode">
-					<span class="gf-form-label width-7">User</span>
+					<span class="gf-form-label width-7">用户名</span>
 					<input type="text" name="username" class="gf-form-input max-width-14" required ng-model='formModel.user' placeholder={{loginHint}}>
 				</div>
 				<div class="gf-form" ng-if="loginMode">
-					<span class="gf-form-label width-7">Password</span>
+					<span class="gf-form-label width-7">密码</span>
 					<input type="password" name="password" class="gf-form-input max-width-14" required ng-model="formModel.password" id="inputPassword" placeholder="password">
 				</div>
 
 				<div class="gf-form" ng-if="!loginMode">
-						<span class="gf-form-label width-7">Email</span>
+						<span class="gf-form-label width-7">邮箱</span>
 						<input type="email" class="gf-form-input max-width-14" required ng-model='formModel.email' placeholder="email">
 				</div>
 
@@ -53,11 +53,11 @@
 				<div class="login-oauth text-center" ng-if="oauthEnabled">
 					<a class="btn btn-large btn-google" href="login/google" target="_self" ng-if="googleAuthEnabled">
 						<i class="fa fa-google"></i>
-						with Google
+						使用google账号
 					</a>
 					<a class="btn btn-large btn-github" href="login/github" target="_self" ng-if="githubAuthEnabled">
 						<i class="fa fa-github"></i>
-						with Github
+						使用github账号
 					</a>
 				</div>
 			</div>
@@ -67,7 +67,7 @@
 			<div class="text-center password-recovery">
 				<div class="text-center">
 					<a href="user/password/send-reset-email">
-						Forgot your password?
+						忘记了你的密码？
 					</a>
 				</div>
 			</div>

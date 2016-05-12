@@ -48,19 +48,19 @@
   font-size: 85%;
   text-align: left;
   &.current::before {
-    content: "Current: "
+    content: "当前值: "
   }
   &.max::before {
-    content: "Max: "
+    content: "最大值: "
   }
   &.min::before {
-    content: "Min: "
+    content: "最小值: "
   }
   &.total::before {
-    content: "Total: "
+    content: "总值: "
   }
   &.avg::before {
-    content: "Avg: "
+    content: "平均值: "
   }
 }
 

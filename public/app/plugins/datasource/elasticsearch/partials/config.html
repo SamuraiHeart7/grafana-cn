@@ -1,37 +1,37 @@
 <datasource-http-settings current="ctrl.current" suggest-url="http://localhost:9200">
 </datasource-http-settings>
 
-<h3 class="page-heading">Elasticsearch details</h3>
+<h3 class="page-heading">Elasticsearch细节</h3>
 
 <div class="gf-form-group">
 	<div class="gf-form-inline">
 		<div class="gf-form max-width-25">
-			<span class="gf-form-label width-9">Index name</span>
+			<span class="gf-form-label width-9">索引名称</span>
 			<input class="gf-form-input" type="text" ng-model='ctrl.current.database' placeholder="" required></input>
 		</div>
 
 		<div class="gf-form width-14">
-			<span class="gf-form-label width-9">Pattern</span>
+			<span class="gf-form-label width-9">方式</span>
 			<select class="gf-form-input gf-size-auto" ng-model="ctrl.current.jsonData.interval" ng-options="f.value as f.name for f in ctrl.indexPatternTypes" ng-change="ctrl.indexPatternTypeChanged()" ></select>
 		</div>
 	</div>
 
 	<div class="gf-form max-width-25">
-		<span class="gf-form-label width-9">Time field name</span>
+		<span class="gf-form-label width-9">时间字段名</span>
 		<input class="gf-form-input" type="text"  ng-model='ctrl.current.jsonData.timeField' placeholder="" required ng-init=""></input>
 	</div>
 
 	<div class="gf-form">
-		<span class="gf-form-label width-9">Version</span>
+		<span class="gf-form-label width-9">版本</span>
 		<select class="gf-form-input gf-size-auto" ng-model="ctrl.current.jsonData.esVersion" ng-options="f.value as f.name for f in ctrl.esVersions"></select>
 	</div>
 
 </div>
 
-<h3 class="page-heading">Default query settings</h3>
+<h3 class="page-heading">默认查询设置</h3>
 <div class="gf-form-group">
 	<div class="gf-form">
-		<span class="gf-form-label">Group by time interval</span>
+		<span class="gf-form-label">按时间间隔分组</span>
 		<input class="gf-form-input max-width-9" type="text" ng-model="ctrl.current.jsonData.timeInterval" spellcheck='false' placeholder="example: >10s">
 	</div>
 </div>

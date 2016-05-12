@@ -1,6 +1,6 @@
 <div class="editor-row">
 	<h5 class="section-heading">
-		Drilldown / detail link<tip>These links appear in the dropdown menu in the panel menu. </tip></h5>
+		追溯/详细信息链接<tip>在面板菜单中这些链接会出现在下拉菜单中 </tip></h5>
 	</h5>
 
 	<div ng-repeat="link in panel.links" style="margin-top: 20px;">
@@ -12,14 +12,14 @@
 				</div>
 
 				<div class="gf-form">
-					<span class="gf-form-label width-7">Type</span>
+					<span class="gf-form-label width-7">类型</span>
 					<div class="gf-form-select-wrapper width-14">
 						<select class="gf-form-input" ng-model="link.type" ng-options="f for f in ['dashboard','absolute']"></select>
 					</div>
 				</div>
 
 				<div class="gf-form">
-					<span class="gf-form-label width-7" ng-show="link.type === 'dashboard'">Dashboard</span>
+					<span class="gf-form-label width-7" ng-show="link.type === 'dashboard'">仪表盘</span>
 					<input ng-show="link.type === 'dashboard'" type="text" ng-model="link.dashboard" bs-typeahead="searchDashboards" class="gf-form-input max-width-14" ng-blur="dashboardChanged(link)">
 
 					<span class="gf-form-label width-7" ng-show="link.type === 'absolute'">Url</span>
@@ -37,12 +37,12 @@
 				</div>
 
 				<div class="gf-form">
-					<div class="gf-form-label width-7">Title</div>
+					<div class="gf-form-label width-7">标题</div>
 					<input type="text" ng-model="link.title" class="gf-form-input">
 				</div>
 
 				<div class="gf-form">
-					<span class="gf-form-label width-7">Url params</span>
+					<span class="gf-form-label width-7">URL参数</span>
 					<input type="text" ng-model="link.params" class="gf-form-input">
 				</div>
 			</div>
@@ -53,9 +53,9 @@
 				</div>
 
 				<div class="gf-form">
-					<editor-checkbox text="Keep current time range" model="link.keepTime"></editor-checkbox>
-					<editor-checkbox text="Add current variable values" model="link.includeVars"></editor-checkbox>
-					<editor-checkbox text="Open in new tab " model="link.targetBlank"></editor-checkbox>
+					<editor-checkbox text="保持当前时间轴" model="link.keepTime"></editor-checkbox>
+					<editor-checkbox text="应用模板参数" model="link.includeVars"></editor-checkbox>
+					<editor-checkbox text="新标签页中打开" model="link.targetBlank"></editor-checkbox>
 				</div>
 			</div>
 		</div>
@@ -63,5 +63,5 @@
 </div>
 
 <div class="editor-row">
-	<button class="btn btn-inverse" ng-click="addLink()"><i class="fa fa-plus"></i> Add link</button>
+	<button class="btn btn-inverse" ng-click="addLink()"><i class="fa fa-plus"></i>添加链接</button>
 </div>

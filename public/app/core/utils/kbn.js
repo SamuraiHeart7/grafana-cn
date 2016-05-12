@@ -452,22 +452,22 @@ function($, _, moment) {
     }
     // Less than 1 min
     else if (Math.abs(size) < 60000) {
-      return kbn.toFixedScaled(size / 1000, decimals, scaledDecimals, 3, " s");
+      return kbn.toFixedScaled(size / 1000, decimals, scaledDecimals, 3, "秒");
     }
     // Less than 1 hour, devide in minutes
     else if (Math.abs(size) < 3600000) {
-      return kbn.toFixedScaled(size / 60000, decimals, scaledDecimals, 5, " min");
+      return kbn.toFixedScaled(size / 60000, decimals, scaledDecimals, 5, "分钟");
     }
     // Less than one day, devide in hours
     else if (Math.abs(size) < 86400000) {
-      return kbn.toFixedScaled(size / 3600000, decimals, scaledDecimals, 7, " hour");
+      return kbn.toFixedScaled(size / 3600000, decimals, scaledDecimals, 7, "小时");
     }
     // Less than one year, devide in days
     else if (Math.abs(size) < 31536000000) {
-      return kbn.toFixedScaled(size / 86400000, decimals, scaledDecimals, 8, " day");
+      return kbn.toFixedScaled(size / 86400000, decimals, scaledDecimals, 8, "天");
     }
 
-    return kbn.toFixedScaled(size / 31536000000, decimals, scaledDecimals, 10, " year");
+    return kbn.toFixedScaled(size / 31536000000, decimals, scaledDecimals, 10, "年");
   };
 
   kbn.valueFormats.s = function(size, decimals, scaledDecimals) {
@@ -478,22 +478,22 @@ function($, _, moment) {
     }
     // Less than 1 hour, devide in minutes
     else if (Math.abs(size) < 3600) {
-      return kbn.toFixedScaled(size / 60, decimals, scaledDecimals, 1, " min");
+      return kbn.toFixedScaled(size / 60, decimals, scaledDecimals, 1, "分钟");
     }
     // Less than one day, devide in hours
     else if (Math.abs(size) < 86400) {
-      return kbn.toFixedScaled(size / 3600, decimals, scaledDecimals, 4, " hour");
+      return kbn.toFixedScaled(size / 3600, decimals, scaledDecimals, 4, "小时");
     }
     // Less than one week, devide in days
     else if (Math.abs(size) < 604800) {
-      return kbn.toFixedScaled(size / 86400, decimals, scaledDecimals, 5, " day");
+      return kbn.toFixedScaled(size / 86400, decimals, scaledDecimals, 5, "天");
     }
     // Less than one year, devide in week
     else if (Math.abs(size) < 31536000) {
-      return kbn.toFixedScaled(size / 604800, decimals, scaledDecimals, 6, " week");
+      return kbn.toFixedScaled(size / 604800, decimals, scaledDecimals, 6, "周");
     }
 
-    return kbn.toFixedScaled(size / 3.15569e7, decimals, scaledDecimals, 7, " year");
+    return kbn.toFixedScaled(size / 3.15569e7, decimals, scaledDecimals, 7, "年");
   };
 
   kbn.valueFormats['µs'] = function(size, decimals, scaledDecimals) {

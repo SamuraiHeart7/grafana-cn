@@ -1,22 +1,22 @@
 <div ng-controller="TemplateEditorCtrl" ng-init="init()">
 	<div class="tabbed-view-header">
 		<h2 class="tabbed-view-title">
-			Templating
+			模板
 		</h2>
 
 		<ul class="gf-tabs">
 			<li class="gf-tabs-item" >
 				<a class="gf-tabs-link" ng-click="mode = 'list';" ng-class="{active: mode === 'list'}">
-					Variables
+					参数
 				</a>
 			</li>
 			<li class="gf-tabs-item" ng-show="mode === 'edit'">
 				<a class="gf-tabs-link" ng-class="{active: mode === 'edit'}">
-					Edit
+					编辑
 				</a>
 			</li>
 			<li class="gf-tabs-item" ng-show="mode === 'new'">
-				<span class="active gf-tabs-link">New</span>
+				<span class="active gf-tabs-link">创建</span>
 			</li>
 		</ul>
 
@@ -29,7 +29,7 @@
 
 		<div ng-if="mode === 'list'">
 			<div ng-if="variables.length === 0">
-				<em>No template variables defined</em>
+				<em>尚未定义模板参数</em>
 			</div>
 			<table class="grafana-options-table">
 				<tr ng-repeat="variable in variables">
@@ -46,13 +46,13 @@
 					<td style="width: 1%"><i ng-click="_.move(variables,$index,$index+1)" ng-hide="$last" class="pointer fa fa-arrow-down"></i></td>
 					<td style="width: 1%">
             <a ng-click="duplicate(variable)" class="btn btn-inverse btn-mini">
-              Duplicate
+              复制
             </a>
           </td>
 					<td style="width: 1%">
 						<a ng-click="edit(variable)" class="btn btn-inverse btn-mini">
 							<i class="fa fa-edit"></i>
-							Edit
+							编辑
 						</a>
 					</td>
 					<td style="width: 1%">
@@ -66,33 +66,33 @@
 
 		<div class="gf-form" ng-show="mode === 'list'">
 			<div class="gf-form-button-row">
-				<a type="button" class="btn gf-form-button btn-success" ng-click="mode = 'new';"><i class="fa fa-plus" ></i>&nbsp;&nbsp;New</a>
+				<a type="button" class="btn gf-form-button btn-success" ng-click="mode = 'new';"><i class="fa fa-plus" ></i>&nbsp;&nbsp;创建</a>
 			</div>
 		</div>
 
 		<div ng-if="mode === 'edit' || mode === 'new'">
-			<h5 class="section-heading">Variable</h5>
+			<h5 class="section-heading">变量</h5>
 			<div class="gf-form-group">
 				<div class="gf-form-inline">
 					<div class="gf-form max-width-19">
-						<span class="gf-form-label width-6">Name</span>
+						<span class="gf-form-label width-6">名称</span>
 						<input type="text" class="gf-form-input" placeholder="name" ng-model='current.name'></input>
 					</div>
 					<div class="gf-form max-width-19">
 						<span class="gf-form-label width-6">
-              Type
+              类型
               <info-popover mode="right-normal">
                 <dl>
                   <dt>Query</dt>
-                  <dd>Variable values are fetched from a metric names query to a data source</dd>
+                  <dd>变量值从数据源的mertic项中获取</dd>
                   <dt>Interval</dt>
-                  <dd>Timespan variable type</dd>
+                  <dd>时间段的变量类型</dd>
                   <dt>Datasource</dt>
-                  <dd>Dynamically switch data sources using this type of variable</dd>
+                  <dd>动态切换数据源</dd>
                   <dt>Custom</dt>
-                  <dd>Define variable values manually</dd>
+                  <dd>自定义变量值</dd>
                 </dl>
-                <a href="http://docs.grafana.org/reference/templating" target="_blank">Templating docs</a>
+                <a href="http://docs.grafana.org/reference/templating" target="_blank">模板说明</a>
               </info-popover>
             </span>
 						<div class="gf-form-select-wrapper max-width-17">
@@ -102,11 +102,11 @@
         </div>
 				<div class="gf-form-inline">
 					<div class="gf-form max-width-19">
-						<span class="gf-form-label width-6">Label</span>
+						<span class="gf-form-label width-6">标签</span>
 						<input type="text" class="gf-form-input" ng-model='current.label' placeholder="optional display name"></input>
 					</div>
 					<div class="gf-form max-width-19">
-						<span class="gf-form-label width-6">Hide</span>
+						<span class="gf-form-label width-6">隐藏</span>
             <div class="gf-form-select-wrapper max-width-15">
 							<select class="gf-form-input" ng-model="current.hide" ng-options="f.value as f.text for f in hideOptions"></select>
 						</div>
@@ -116,14 +116,14 @@
 			</div>
 
 			<div ng-show="current.type === 'interval'" class="gf-form-group">
-        <h5 class="section-heading">Interval Options</h5>
+        <h5 class="section-heading">间隔选项</h5>
 
 				<div class="gf-form">
-					<span class="gf-form-label width-9">Values</span>
+					<span class="gf-form-label width-9">数值</span>
 					<input type="text" class="gf-form-input" placeholder="name" ng-model='current.query' placeholder="1m,10m,1h,6h,1d,7d" ng-model-onblur ng-change="runQuery()"></input>
 				</div>
 				<div class="gf-form">
-					<span class="gf-form-label width-9">Auto option</span>
+					<span class="gf-form-label width-9">自动选项</span>
 					<editor-checkbox text="Enable" model="current.auto" change="runQuery()"></editor-checkbox>
 				</div>
 				<div class="gf-form-inline">
@@ -145,36 +145,28 @@
 			</div>
 
 			<div ng-show="current.type === 'custom'" class="gf-form-group">
-        <h5 class="section-heading">Custom Options</h5>
+        <h5 class="section-heading">自定义选项</h5>
 				<div class="gf-form">
-					<span class="gf-form-label width-13">Values separated by comma</span>
+					<span class="gf-form-label width-13">数值逗号隔开</span>
 					<input type="text" class="gf-form-input" ng-model='current.query' ng-blur="runQuery()" placeholder="1, 10, 20, myvalue"></input>
 				</div>
 			</div>
 
-			<div ng-show="current.type === 'constant'" class="gf-form-group">
-        <h5 class="section-heading">Constant options</h5>
-				<div class="gf-form">
-					<span class="gf-form-label">Value</span>
-					<input type="text" class="gf-form-input" ng-model='current.query' ng-blur="runQuery()" placeholder="your metric prefix"></input>
-				</div>
-			</div>
-
 			<div ng-show="current.type === 'query'" class="gf-form-group">
-        <h5 class="section-heading">Query Options</h5>
+        <h5 class="section-heading">查询选项</h5>
 
         <div class="gf-form-inline">
           <div class="gf-form max-width-21">
-            <span class="gf-form-label width-7" ng-show="current.type === 'query'">Data source</span>
+            <span class="gf-form-label width-7" ng-show="current.type === 'query'">数据源</span>
             <div class="gf-form-select-wrapper max-width-14">
               <select class="gf-form-input" ng-model="current.datasource" ng-options="f.value as f.name for f in datasources"></select>
             </div>
           </div>
           <div class="gf-form max-width-21">
             <span class="gf-form-label width-7">
-              Refresh
+              刷新
               <info-popover mode="right-normal">
-                When to update the values of this variable.
+                更新变量值的机制.
               </info-popover>
             </span>
             <div class="gf-form-select-wrapper max-width-14">
@@ -183,12 +175,12 @@
           </div>
         </div>
         <div class="gf-form">
-          <span class="gf-form-label width-7">Query</span>
+          <span class="gf-form-label width-7">查询</span>
           <input type="text" class="gf-form-input" ng-model='current.query' placeholder="metric name or tags query" ng-model-onblur ng-change="runQuery()"></input>
         </div>
         <div class="gf-form">
           <span class="gf-form-label width-7">
-            Regex
+            正则过滤
             <info-popover mode="right-normal">
               Optional, if you want to extract part of a series name or metric node segment.
             </info-popover>
@@ -198,7 +190,7 @@
       </div>
 
       <div ng-show="current.type === 'datasource'" class="gf-form-group">
-        <h5 class="section-heading">Data source options</h5>
+        <h5 class="section-heading">数据源选项</h5>
 
         <div class="gf-form">
           <label class="gf-form-label width-12">Type</label>
@@ -209,7 +201,7 @@
 
         <div class="gf-form">
           <label class="gf-form-label width-12">
-            Instance name filter
+            实例名过滤
             <info-popover mode="right-normal">
               Regex filter for which data source instances to choose from in
               the variable value dropdown. Leave empty for all.
@@ -223,7 +215,7 @@
       </div>
 
       <div class="section gf-form-group" ng-show="showSelectionOptions()">
-        <h5 class="section-heading">Selection Options</h5>
+        <h5 class="section-heading">选择选项</h5>
         <div class="section">
           <gf-form-switch class="gf-form"
                           label="Multi-value"
@@ -240,28 +232,28 @@
           </gf-form-switch>
         </div>
         <div class="gf-form" ng-if="current.includeAll">
-          <span class="gf-form-label width-10">Custom all value</span>
+          <span class="gf-form-label width-10">自定义所有值</span>
           <input type="text" class="gf-form-input max-width-15" ng-model='current.allValue' placeholder="blank = auto"></input>
         </div>
       </div>
 
       <div class="gf-form-group" ng-if="current.type === 'query'">
-        <h5>Value groups/tags (Experimental feature)</h5>
+        <h5>数值groups/tags (试验特性)</h5>
         <div class="gf-form">
           <editor-checkbox text="Enable" model="current.useTags" change="runQuery()"></editor-checkbox>
         </div>
         <div class="gf-form last" ng-if="current.useTags">
-          <span class="gf-form-label width-10">Tags query</span>
+          <span class="gf-form-label width-10">标签查询</span>
           <input type="text" class="gf-form-input" ng-model='current.tagsQuery' placeholder="metric name or tags query" ng-model-onblur></input>
         </div>
         <div class="gf-form" ng-if="current.useTags">
-          <li class="gf-form-label width-10">Tag values query</li>
+          <li class="gf-form-label width-10">标签名查询</li>
           <input type="text" class="gf-form-input" ng-model='current.tagValuesQuery' placeholder="apps.$tag.*" ng-model-onblur></input>
         </div>
       </div>
 
       <div class="gf-form-group">
-        <h5>Preview of values (shows max 20)</h5>
+        <h5>预览 (最大显示前20个)</h5>
         <div class="gf-form-inline">
           <div class="gf-form" ng-repeat="option in current.options | limitTo: 20">
             <span class="gf-form-label">{{option.text}}</span>
@@ -271,8 +263,8 @@
     </div>
 
     <div class="gf-form-button-row p-y-0">
-      <button type="button" class="btn btn-success" ng-show="mode === 'edit'" ng-click="update();">Update</button>
-      <button type="button" class="btn btn-success" ng-show="mode === 'new'" ng-click="add();">Add</button>
+      <button type="button" class="btn btn-success" ng-show="mode === 'edit'" ng-click="update();">更新</button>
+      <button type="button" class="btn btn-success" ng-show="mode === 'new'" ng-click="add();">添加</button>
     </div>
   </div>
 </div>

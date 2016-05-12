@@ -77,7 +77,7 @@ export class AlertSrv {
     scope.altActionText = payload.altActionText;
     scope.icon = payload.icon || "fa-check";
     scope.yesText = payload.yesText || "Yes";
-    scope.noText = payload.noText || "Cancel";
+    scope.noText = payload.noText || "取消";
 
     var confirmModal = this.$modal({
       template: 'public/app/partials/confirm_modal.html',

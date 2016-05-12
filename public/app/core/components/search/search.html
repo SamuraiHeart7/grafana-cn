@@ -1,18 +1,18 @@
 <div class="search-container" ng-if="ctrl.isOpen">
 	<div class="search-field-wrapper">
 		<span style="position: relative;">
-			<input  type="text" placeholder="Find dashboards by name" give-focus="ctrl.giveSearchFocus" tabindex="1"
+			<input  type="text" placeholder="按名称查找仪表盘" give-focus="ctrl.giveSearchFocus" tabindex="1"
 			ng-keydown="ctrl.keyDown($event)" ng-model="ctrl.query.query" ng-model-options="{ debounce: 500 }" spellcheck='false' ng-change="ctrl.search()" />
 		</span>
 		<div class="search-switches">
 			<i class="fa fa-filter"></i>
 			<a class="pointer" href="javascript:void 0;" ng-click="ctrl.showStarred()" tabindex="2">
 				<i class="fa fa-remove" ng-show="ctrl.query.starred"></i>
-				starred
+				收藏
 			</a> |
 			<a class="pointer" href="javascript:void 0;" ng-click="ctrl.getTags()" tabindex="3">
 				<i class="fa fa-remove" ng-show="ctrl.tagsMode"></i>
-				tags
+				标签
 			</a>
 			<span ng-if="ctrl.query.tag.length">
 				|
@@ -42,7 +42,7 @@
 	</div>
 
 	<div class="search-results-container" ng-if="!ctrl.tagsMode">
-		<h6 ng-hide="ctrl.results.length">No dashboards matching your query were found.</h6>
+		<h6 ng-hide="ctrl.results.length">没有查找到相匹配的结果.</h6>
 
 		<a class="search-item pointer search-item-{{row.type}}" bindonce ng-repeat="row in ctrl.results"
 			ng-class="{'selected': $index == ctrl.selectedIndex}" ng-href="{{row.url}}">
@@ -64,12 +64,12 @@
 	<div class="search-button-row">
 		<a class="btn btn-inverse pull-left" href="dashboard/new" ng-show="ctrl.contextSrv.isEditor" ng-click="ctrl.isOpen = false;">
 			<i class="fa fa-plus"></i>
-			Create New
+			创建
 		</a>
 
 		<a class="btn btn-inverse pull-left" href="dashboard/new/?editview=import" ng-show="ctrl.contextSrv.isEditor" ng-click="ctrl.isOpen = false;">
 			<i class="fa fa-upload"></i>
-			Import
+			导入
 		</a>
 
 		<a class="pull-right search-button-row-explore-link" target="_blank" href="https://grafana.net/dashboards?utm_source=grafana_search">

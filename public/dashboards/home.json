@@ -1,6 +1,6 @@
 {
   "id": null,
-  "title": "Home",
+  "title": "主页",
   "tags": [],
   "style": "dark",
   "timezone": "browser",
@@ -14,7 +14,7 @@
       "height": "25px",
       "panels": [
         {
-          "content": "<div class=\"text-center dashboard-header\">\n  <span>Home Dashboard</span>\n</div>",
+          "content": "<div class=\"text-center dashboard-header\">\n  <span>主 页</span>\n</div>",
           "editable": true,
           "id": 1,
           "links": [],

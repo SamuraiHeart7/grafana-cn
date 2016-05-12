@@ -66,11 +66,11 @@ class TablePanelCtrl extends MetricsPanelCtrl {
   }
 
   onInitEditMode() {
-    this.addEditorTab('Options', tablePanelEditor, 2);
+    this.addEditorTab('选项', tablePanelEditor, 2);
   }
 
   onInitPanelActions(actions) {
-    actions.push({text: 'Export CSV', click: 'ctrl.exportCsv()'});
+    actions.push({text: '导出到CSV格式文件', click: 'ctrl.exportCsv()'});
   }
 
   issueQueries(datasource) {

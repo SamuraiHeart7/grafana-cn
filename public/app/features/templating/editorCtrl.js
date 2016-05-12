@@ -84,18 +84,18 @@ function (angular, _) {
 
     $scope.isValid = function() {
       if (!$scope.current.name) {
-        $scope.appEvent('alert-warning', ['Validation', 'Template variable requires a name']);
+        $scope.appEvent('alert-warning', ['验证', '模板变量需要一个名字']);
         return false;
       }
 
       if (!$scope.current.name.match(/^\w+$/)) {
-        $scope.appEvent('alert-warning', ['Validation', 'Only word and digit characters are allowed in variable names']);
+        $scope.appEvent('alert-warning', ['验证', '变量名中只有文字和数字字符被允许出现']);
         return false;
       }
 
       var sameName = _.findWhere($scope.variables, { name: $scope.current.name });
       if (sameName && sameName !== $scope.current) {
-        $scope.appEvent('alert-warning', ['Validation', 'Variable with the same name already exists']);
+        $scope.appEvent('alert-warning', ['验证', '相同变量名称已存在']);
         return false;
       }
 
