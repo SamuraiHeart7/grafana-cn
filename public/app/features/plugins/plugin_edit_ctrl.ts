@@ -27,7 +27,7 @@ export class PluginEditCtrl {
     this.model = {};
     this.pluginId = $routeParams.pluginId;
     this.tabIndex = 0;
-    this.tabs = ['Overview'];
+    this.tabs = ['概览'];
 
     this.preUpdateHook = () => Promise.resolve();
     this.postUpdateHook = () => Promise.resolve();

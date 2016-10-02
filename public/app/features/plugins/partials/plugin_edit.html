@@ -1,4 +1,4 @@
-<navbar title="Plugins" title-url="plugins" icon="icon-gf icon-gf-apps">
+<navbar title="插件" title-url="plugins" icon="icon-gf icon-gf-apps">
 </navbar>
 
 <div class="page-container" ng-init="ctrl.init()">
@@ -40,9 +40,9 @@
         <plugin-component type="app-config-ctrl"></plugin-component>
 
 	      <div class="gf-form-button-row">
-					<button type="submit" class="btn btn-success" ng-click="ctrl.enable()" ng-show="!ctrl.model.enabled">Enable</button>
-					<button type="submit" class="btn btn-success" ng-click="ctrl.update()" ng-show="ctrl.model.enabled">Update</button>
-					<button type="submit" class="btn btn-danger" ng-click="ctrl.disable()" ng-show="ctrl.model.enabled">Disable</button>
+					<button type="submit" class="btn btn-success" ng-click="ctrl.enable()" ng-show="!ctrl.model.enabled">开启</button>
+					<button type="submit" class="btn btn-success" ng-click="ctrl.update()" ng-show="ctrl.model.enabled">更新</button>
+					<button type="submit" class="btn btn-danger" ng-click="ctrl.disable()" ng-show="ctrl.model.enabled">关闭</button>
 				</div>
       </div>
     </div>
@@ -53,10 +53,10 @@
 
     <aside class="page-sidebar">
       <section class="page-sidebar-section">
-        <h4>Version</h4>
+        <h4>版本</h4>
         <span>{{ctrl.model.info.version}}</span>
 				<div ng-show="ctrl.model.hasUpdate">
-          <a ng-click="ctrl.updateAvailable()" bs-tooltip="ctrl.model.latestVersion">Update Available!</a>
+          <a ng-click="ctrl.updateAvailable()" bs-tooltip="ctrl.model.latestVersion">有更新啦!</a>
 				</div>
       </section>
       <section class="page-sidebar-section" ng-show="ctrl.model.type === 'app'">
@@ -69,7 +69,7 @@
         </ul>
       </section>
       <section class="page-sidebar-section">
-        <h5>Dependencies</h4>
+        <h5>依赖</h4>
         <ul class="ui-list plugin-info-list">
           <li class="plugin-info-list-item">
             <img src="public/img/grafana_icon.svg"></img>
@@ -82,7 +82,7 @@
         </ul>
       </section>
       <section class="page-sidebar-section">
-        <h5>Links</h4>
+        <h5>链接</h4>
         <ul class="ui-list">
           <li ng-repeat="link in ctrl.model.info.links">
             <a href="{{link.url}}" class="external-link" target="_blank">{{link.name}}</a>

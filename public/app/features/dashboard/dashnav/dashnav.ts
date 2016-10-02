@@ -139,12 +139,12 @@ export class DashNavCtrl {
         err.isHandled = true;
 
         $scope.appEvent('confirm-modal', {
-          title: 'Plugin Dashboard',
+          title: '仪表盘插件',
           text: err.data.message,
-          text2: 'Your changes will be lost when you update the plugin. Use Save As to create custom version.',
-          yesText: "Overwrite",
+          text2: '当更新插件时你的修改将会丢失. 使用另存为创建一个新仪表盘吧.',
+          yesText: "覆盖",
           icon: "fa-warning",
-          altActionText: "Save As",
+          altActionText: "另存为",
           onAltAction: function() {
             $scope.saveDashboardAs();
           },

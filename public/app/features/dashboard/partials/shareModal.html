@@ -52,15 +52,15 @@
 <script type="text/ng-template" id="shareLinkOptions.html">
 	<div class="gf-form-group">
 		<gf-form-switch class="gf-form"
-			label="Current time range" label-class="width-12" switch-class="max-width-6"
+			label="包含当前时间段" label-class="width-12" switch-class="max-width-6"
 			checked="options.forCurrent" on-change="buildUrl()">
 		</gf-form-switch>
 		<gf-form-switch class="gf-form"
-			label="Template variables" label-class="width-12" switch-class="max-width-6"
+			label="包含模板变量" label-class="width-12" switch-class="max-width-6"
 			checked="options.includeTemplateVars" on-change="buildUrl()">
 		</gf-form-switch>
 		<div class="gf-form">
-			<span class="gf-form-label width-12">Theme</span>
+			<span class="gf-form-label width-12">主题</span>
 			<div class="gf-form-select-wrapper width-6">
 				<select class="gf-form-input" ng-model="options.theme" ng-options="f as f for f in ['current', 'dark', 'light']" ng-change="buildUrl()"></select>
 			</div>
@@ -75,7 +75,7 @@
 		</div>
 		<div class="share-modal-content">
 			<p class="share-modal-info-text">
-				Create a direct link to this dashboard or panel, customized with the options below.
+				创建一个直接链接到该仪表板或面板，用下面的选项定制。
 			</p>
 			<div ng-include src="'shareLinkOptions.html'"></div>
 			<div>
@@ -85,13 +85,13 @@
 							<input type="text" data-share-panel-url class="gf-form-input" ng-model="shareUrl"></input>
 						</div>
 						<div class="gf-form">
-							<button class="btn btn-inverse" data-clipboard-text="{{shareUrl}}" clipboard-button><i class="fa fa-clipboard"></i> Copy</button>
+							<button class="btn btn-inverse" data-clipboard-text="{{shareUrl}}" clipboard-button><i class="fa fa-clipboard"></i> 复制</button>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="gf-form" ng-show="modeSharePanel">
-				<a href="{{imageUrl}}" target="_blank"><i class="fa fa-camera"></i> Direct link rendered image</a>
+				<a href="{{imageUrl}}" target="_blank"><i class="fa fa-camera"></i> 直接链接渲染图像</a>
 			</div>
 		</div>
 </script>
@@ -139,7 +139,7 @@
 								{{snapshotUrl}}
 							</a>
 							<br>
-							<button class="btn btn-inverse" data-clipboard-text="{{snapshotUrl}}" clipboard-button><i class="fa fa-clipboard"></i> Copy Link</button>
+							<button class="btn btn-inverse" data-clipboard-text="{{snapshotUrl}}" clipboard-button><i class="fa fa-clipboard"></i>复制链接</button>
 						</div>
 					</div>
 				</div>
@@ -153,11 +153,11 @@
 						<i class="fa fa-cloud-upload"></i>
 						{{sharingButtonText}}
 					</button>
-					<a class="btn btn-link" ng-click="dismiss()">Cancel</a>
+					<a class="btn btn-link" ng-click="dismiss()">取消</a>
 				</div>
 
 				<div class="pull-right" ng-if="step === 2" style="padding: 5px">
-					您遇到了错误？ <a class="pointer" ng-click="deleteSnapshot()" target="_blank">delete snapshot.</a>
+					您遇到了错误？ <a class="pointer" ng-click="deleteSnapshot()" target="_blank">删除快照.</a>
 				</div>
 			</div>
 		</div>

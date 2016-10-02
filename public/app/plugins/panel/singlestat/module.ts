@@ -36,8 +36,8 @@ class SingleStatCtrl extends MetricsPanelCtrl {
       { value: 'null', op: '=', text: 'N/A' }
     ],
     mappingTypes: [
-      {name: 'value to text', value: 1},
-      {name: 'range to text', value: 2},
+      {name: '值映射成文本', value: 1},
+      {name: '范围值映射文本', value: 2},
     ],
     rangeMaps: [
       { from: 'null', to: 'null', text: 'N/A' }
@@ -81,7 +81,7 @@ class SingleStatCtrl extends MetricsPanelCtrl {
   onInitEditMode() {
     this.fontSizes = ['20%', '30%','50%','70%','80%','100%', '110%', '120%', '150%', '170%', '200%'];
     this.addEditorTab('选项', 'public/app/plugins/panel/singlestat/editor.html', 2);
-    this.addEditorTab('Value Mappings', 'public/app/plugins/panel/singlestat/mappings.html', 3);
+    this.addEditorTab('值映射', 'public/app/plugins/panel/singlestat/mappings.html', 3);
     this.unitFormats = kbn.getUnitFormats();
   }
 

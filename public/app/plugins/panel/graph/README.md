@@ -1,7 +1,7 @@
-# Graph Panel -  Native Plugin
+# 图形面板  -- 原生插件
 
-The Graph is the main graph panel and is **included** with Grafana. It provides a very rich set of graphing options.
+该图是grafana主要图板，并**包含**在Grafana里。它提供了非常丰富的图形选项。
 
-Read more about it here:
+更多详情于此查看:
 
 [http://docs.grafana.org/reference/graph/](http://docs.grafana.org/reference/graph/)

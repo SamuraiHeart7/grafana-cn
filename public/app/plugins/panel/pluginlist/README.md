@@ -1,2 +1,2 @@
-# Plugin List Panel -  Native Plugin
+# 展示插件列表的面板 -  原生插件
 

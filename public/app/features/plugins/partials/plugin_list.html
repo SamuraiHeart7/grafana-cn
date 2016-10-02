@@ -1,9 +1,9 @@
-<navbar title="Plugins" icon="icon-gf icon-gf-apps" title-url="plugins">
+<navbar title="插件" icon="icon-gf icon-gf-apps" title-url="plugins">
 </navbar>
 
 <div class="page-container">
   <div class="page-header">
-    <h1>Plugins</h1>
+    <h1>插件</h1>
 
 		<!-- <a class="btn btn&#45;inverse" href="https://grafana.net/plugins?utm_source=grafana_plugin_list" target="_blank"> -->
 		<!-- 	Explore plugins on Grafana.net -->
@@ -13,12 +13,12 @@
 			<ul class="gf-tabs">
 				<li class="gf-tabs-item">
 					<a class="gf-tabs-link" href="plugins?type=panel" ng-class="{active: ctrl.tabIndex === 0}">
-						Panels
+						面板
 					</a>
 				</li>
 				<li class="gf-tabs-item">
 					<a class="gf-tabs-link" href="plugins?type=datasource" ng-class="{active: ctrl.tabIndex === 1}">
-						Data sources
+						数据源
 					</a>
 				</li>
 				<li class="gf-tabs-item">
@@ -29,7 +29,7 @@
 			</ul>
 
       <a class="get-more-plugins-link" href="https://grafana.net/plugins?utm_source=grafana_plugin_list" target="_blank">
-        Find plugins on
+        查找插件于
       </a>
     </div>
   </div>
@@ -46,7 +46,7 @@
               {{plugin.type}}
             </div>
             <div class="card-item-notice" ng-show="plugin.hasUpdate">
-              <span bs-tooltip="plugin.latestVersion">Update available!</span>
+              <span bs-tooltip="plugin.latestVersion">有更新啦!</span>
             </div>
           </div>
           <div class="card-item-body">

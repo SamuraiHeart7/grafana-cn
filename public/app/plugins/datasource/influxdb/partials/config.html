@@ -1,23 +1,23 @@
 <datasource-http-settings current="ctrl.current" suggest-url="http://localhost:8086">
 </datasource-http-settings>
 
-<h3 class="page-heading">InfluxDB Details</h3>
+<h3 class="page-heading">InfluxDB详情</h3>
 
 <div class="gf-form-group">
 	<div class="gf-form-inline">
 		<div class="gf-form max-width-30">
-			<span class="gf-form-label width-7">Database</span>
+			<span class="gf-form-label width-7">数据库名</span>
 			<input type="text" class="gf-form-input" ng-model='ctrl.current.database' placeholder="" required></input>
 		</div>
 	</div>
 
 	<div class="gf-form-inline">
 		<div class="gf-form max-width-15">
-			<span class="gf-form-label width-7">User</span>
+			<span class="gf-form-label width-7">用户</span>
 			<input type="text" class="gf-form-input" ng-model='ctrl.current.user' placeholder="" required></input>
 		</div>
 		<div class="gf-form max-width-15">
-			<span class="gf-form-label width-7">Password</span>
+			<span class="gf-form-label width-7">密码</span>
 			<input type="password" class="gf-form-input" ng-model='ctrl.current.password' placeholder="" required></input>
 		</div>
 	</div>
@@ -25,9 +25,9 @@
 
 <div class="gf-form-group">
 	<div class="gf-form max-width-21">
-		<span class="gf-form-label">Default group by time</span>
+		<span class="gf-form-label">默认按时间分组</span>
 		<input type="text" class="gf-form-input width-6" ng-model="ctrl.current.jsonData.timeInterval"
 		spellcheck='false' placeholder="example: >10s"></input>
-		<i class="fa fa-question-circle" bs-tooltip="'Set a low limit by having a greater sign: example: >10s'" data-placement="right"></i>
+		<i class="fa fa-question-circle" bs-tooltip="'设置下限 举例: >10s'" data-placement="right"></i>
 	</div>
 </div>

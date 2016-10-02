@@ -139,17 +139,17 @@ func PostDashboard(c *middleware.Context, cmd m.SaveDashboardCommand) Response {
 			return Json(412, util.DynMap{"status": "version-mismatch", "message": err.Error()})
 		}
 		if pluginErr, ok := err.(m.UpdatePluginDashboardError); ok {
-			message := "The dashboard belongs to plugin " + pluginErr.PluginId + "."
+			message := "该仪表盘属于插件 " + pluginErr.PluginId + "."
 			// look up plugin name
 			if pluginDef, exist := plugins.Plugins[pluginErr.PluginId]; exist {
-				message = "The dashboard belongs to plugin " + pluginDef.Name + "."
+				message = "该仪表盘属于插件 " + pluginDef.Name + "."
 			}
 			return Json(412, util.DynMap{"status": "plugin-dashboard", "message": message})
 		}
 		if err == m.ErrDashboardNotFound {
 			return Json(404, util.DynMap{"status": "not-found", "message": err.Error()})
 		}
-		return ApiError(500, "Failed to save dashboard", err)
+		return ApiError(500, "仪表盘保存失败", err)
 	}
 
 	c.TimeRequest(metrics.M_Api_Dashboard_Save)
@@ -177,8 +177,7 @@ func GetHomeDashboard(c *middleware.Context) Response {
 		}
 
 		dashRedirect := dtos.DashboardRedirect{RedirectUri: "db/" + slugQuery.Result}
-		c.JSON(200, &dashRedirect)
-		return
+		return Json(200, &dashRedirect)
 	}
 
 	filePath := path.Join(setting.StaticRootPath, "dashboards/home.json")

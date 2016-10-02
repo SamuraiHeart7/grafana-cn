@@ -21,7 +21,7 @@ func StarDashboard(c *middleware.Context) Response {
 		return ApiError(500, "Failed to star dashboard", err)
 	}
 
-	return ApiSuccess("Dashboard starred!")
+	return ApiSuccess("收藏该仪表盘成功！")
 }
 
 func UnstarDashboard(c *middleware.Context) Response {
@@ -36,5 +36,5 @@ func UnstarDashboard(c *middleware.Context) Response {
 		return ApiError(500, "Failed to unstar dashboard", err)
 	}
 
-	return ApiSuccess("Dashboard unstarred")
+	return ApiSuccess("取消收藏该仪表盘！")
 }

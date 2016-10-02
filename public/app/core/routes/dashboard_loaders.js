@@ -30,7 +30,7 @@ function (coreModule) {
     $scope.initDashboard({
       meta: { canStar: false, canShare: false },
       dashboard: {
-        title: "新的仪表盘",
+        title: "新建仪表盘",
         rows: [{ height: '250px', panels:[] }]
       },
     }, $scope);

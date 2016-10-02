@@ -68,7 +68,7 @@
 					小数位
 				</li>
 				<li>
-					<input type="number" class="input-small tight-form-input last" placeholder="auto" bs-tooltip="'Override automatic decimal precision for legend and tooltips'" data-placement="right"
+					<input type="number" class="input-small tight-form-input last" placeholder="auto" bs-tooltip="'覆盖图例和工具提示的默认小数精度'" data-placement="right"
 					ng-model="ctrl.panel.decimals" ng-change="ctrl.render()" ng-model-onblur>
 				</li>
 			</ul>
@@ -97,7 +97,7 @@
 					<label for="ctrl.panel.colorValue" class="cr1"></label>
 				</li>
 				<li class="tight-form-item">
-					阀值<tip>Define two threshold values&lt;br /&gt; 50,80 will produce: &lt;50 = Green, 50:80 = Yellow, &gt;80 = Red</tip>
+					阀值<tip>定义两个阈值，逗号隔开&lt;br /&gt; 50,80的意思是: 小于50的值显示第一个颜色（默认绿）, 50:80之间的显示第二个颜色（黄色）, 大于80的显示第三个颜色（红色）</tip>
 				</li>
 				<li>
 					<input type="text" class="input-large tight-form-input" ng-model="ctrl.panel.thresholds" ng-blur="ctrl.render()" placeholder="50,80"></input>
@@ -111,7 +111,7 @@
 					<spectrum-picker ng-model="ctrl.panel.colors[2]" ng-change="ctrl.render()" ></spectrum-picker>
 				</li>
 				<li class="tight-form-item last">
-					<a class="pointer" ng-click="ctrl.invertColorOrder()">invert order</a>
+					<a class="pointer" ng-click="ctrl.invertColorOrder()">反转顺序</a>
 				</li>
 			</ul>
 			<div class="clearfix"></div>

@@ -4,7 +4,7 @@
 		<h5 class="section-heading" ng-show="$index === 0">左侧Y轴</h5>
 		<h5 class="section-heading" ng-show="$index === 1">右侧Y轴</h5>
 
-		<gf-form-switch class="gf-form" label="Show" label-class="width-5" checked="yaxis.show" on-change="ctrl.render()"></gf-form-switch>
+		<gf-form-switch class="gf-form" label="显示" label-class="width-5" checked="yaxis.show" on-change="ctrl.render()"></gf-form-switch>
 
 		<div ng-if="yaxis.show">
 			<div class="gf-form">
@@ -39,7 +39,7 @@
 
 	<div class="section gf-form-group">
 		<h5 class="section-heading">X轴</h5>
-		<gf-form-switch class="gf-form" label="Show" label-class="width-5" checked="ctrl.panel.xaxis.show" on-change="ctrl.render()"></gf-form-switch>
+		<gf-form-switch class="gf-form" label="显示" label-class="width-5" checked="ctrl.panel.xaxis.show" on-change="ctrl.render()"></gf-form-switch>
 	</div>
 
   <div class="section gf-form-group">
@@ -69,6 +69,6 @@
       </div>
     </div>
 
-    <gf-form-switch class="gf-form" label="Line Mode" label-class="width-6" checked="ctrl.panel.grid.thresholdLine" on-change="ctrl.render()"></gf-form-switch>
+    <gf-form-switch class="gf-form" label="线条模式" label-class="width-6" checked="ctrl.panel.grid.thresholdLine" on-change="ctrl.render()"></gf-form-switch>
   </div>
 </div>

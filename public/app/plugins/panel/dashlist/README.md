@@ -1,9 +1,9 @@
-# Dashlist Panel -  Native Plugin
+# 仪表盘列表面板  --  原生插件
 
-This Dashlist panel is **included** with Grafana.
+此插件默认**包含**在Grafana里.
 
-The dashboard list panel allows you to display dynamic links to other dashboards. The list can be configured to use starred dashboards, a search query and/or dashboard tags.
+仪表板盘列表面板可以显示动态链接到其他仪表板。该列表可以被配置为使用加星标(收藏)的仪表盘，一个搜索的查询和/或仪表板标签。
 
-Read more about it here:
+于此查看更多信息:
 
 [http://docs.grafana.org/reference/dashlist/](http://docs.grafana.org/reference/dashlist/)
