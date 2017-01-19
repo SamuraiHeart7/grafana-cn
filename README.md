@@ -7,6 +7,8 @@
 [Slack](http://slack.raintank.io) |
 [Email](mailto:contact@grafana.org)
 
+直接去release页面下载安装后，就是全新汉化界面。
+
 Grafana is an open source, feature rich metrics dashboard and graph editor for
 Graphite, Elasticsearch, OpenTSDB, Prometheus and InfluxDB.
 
